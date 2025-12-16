@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+/* simple CRT scanlines */
+.scanlines {
+  background-image: linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 100% 3px;
+}
+
+/* quick “static” flash during channel change */
+@keyframes staticFlash {
+  0% { opacity: 0; }
+  20% { opacity: 0.22; }
+  60% { opacity: 0.10; }
+  100% { opacity: 0; }
+}
+
+.static-flash {
+  animation: staticFlash 280ms ease-out;
+  background:
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.06), rgba(255,255,255,0.06) 1px, transparent 1px, transparent 3px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.04) 1px, transparent 1px, transparent 4px);
+}
